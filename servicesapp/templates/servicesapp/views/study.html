@@ -1,0 +1,242 @@
+{% extends 'views/base.html' %}
+{% load static %}
+
+
+{% block inlinecss %}
+
+<style>
+    .justified-text{
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    ..plyr__poster{
+        background-color: white !important;
+    }
+    .plyr {
+        background: white !important;
+    }
+
+</style>
+
+{% endblock inlinecss %}
+
+
+
+{% block navmenu %}
+    <li><a class="nav-link" href="{% url 'servicesapp:servicesapp_study_packages' %}">Packages</a></li>
+{% endblock navmenu %}
+{% block content %}
+
+{% block pageheader %}
+    <section class="wrapper bg-soft-primary">
+        <div class="container pt-10 pb-10 pt-md-10 pb-md-10 text-center">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown"
+                    data-group="page-title">
+                    <h1 class="display-6 mb-4">The Ottoman Group(TOG) Education</h1>
+                    <p class="lead fs-sm px-xl-12 px-xxl-6 mb-7">
+                        Make your education dreams come true in the
+                        Turkey with the assurance of TOG
+                        Education Consultancy.
+                    </p>
+                    <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons"
+                        data-delay="600">
+                        <span>
+                            <a href="{% url 'formsapp:formsapp_apply_study' %}" class="btn btn-primary rounded mx-1">Apply Now</a>
+                            <a href="{% url 'servicesapp:servicesapp_study_packages' %}" class="btn btn-primary rounded mx-1">Packages</a>
+                        </span>
+                    </div>
+                </div>
+                <!-- /column -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
+{% endblock pageheader %}
+
+
+
+{% comment %} reasons to choose turkey {% endcomment %}
+<section class="wrapper bg-soft-primary">
+    <div class="container py-14 py-md-16">
+        <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+            <div class="col-lg-7 order-lg-2">
+                <figure><img class="w-auto" src="{% static './assets/img/illustrations/i2.png' %}"
+                        srcset="{% static './assets/img/illustrations/i2'%}@2x.png 2x" alt="" /></figure>
+            </div>
+            <!--/column -->
+            <div class="col-lg-5">
+                <h2 class="fs-15 text-uppercase text-line text-primary mb-3 ">Why Turkey?</h2>
+                <h3 class="display-6 mb-7">Reasons to Choose Turkey.</h3>
+                <div>
+                    <p class="justified-text">
+                        Each year, a lot of students go to different countries of the world for higher studies. 
+                        Most of the students go to countries like the United States, Canada, Australia, and European countries. 
+                        But very few people know that these are not the only options.
+                    </p>
+                    <p class="justified-text">
+                        Türkiye is an excellent choice for students who are looking for study-abroad opportunities.
+                        Türkiye has all the benefits a western country could offer and fewer drawbacks. 
+                        If you are one of those people who can think out of the box, considering all the facts, you can easily put Türkiye on the top of your priority list.
+                    </p>
+                    <a href="{{why_turkey_blog.get_absolute_url}}" class="btn btn-expand btn-soft-primary rounded-pill">
+                        <i class="uil uil-arrow-right"></i>
+                        <span>details</span>
+                    </a>
+                </div>
+            </div>
+            <!--/column -->
+        </div>
+        <!--/.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+
+{% comment %} eligible or not {% endcomment %}
+<section class="wrapper bg-soft-primary">
+    <div class="container py-14 py-md-16">
+        <div class="row">
+            <div class="col-xl-10 mx-auto">
+                <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-400"
+                    data-image-src="{% static 'assets/img/backgrounds/bg3.jpg' %}">
+                    <div
+                        class="card-body p-6 p-md-11 d-lg-flex flex-row align-items-lg-center justify-content-md-between text-center text-lg-start">
+                        <h3 class="display-6 fs-20 mb-6 mb-lg-0 pe-lg-10 pe-xl-5 pe-xxl-18 text-white">
+                            Find If You are Eligible to Study in Turkey.
+                            Take advantage of our free cosultancy.
+                        </h3>
+
+                        <a href="{% url 'formsapp:formsapp_book_consultancy' %}"
+                            class="btn btn-white rounded-pill mb-0 text-nowrap">Consult for Free</a>
+                    </div>
+                    <!--/.card-body -->
+                </div>
+                <!--/.card -->
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+
+
+
+{% comment %} working process {% endcomment %}
+<section class="wrapper bg-soft-primary">
+    <div class="container pb-15 pb-md-15">
+        <div class="row text-center">
+            
+            <div class="col-lg-9 mx-auto">
+                <h2 class="fs-15 text-uppercase text-muted mb-3 mt-12">Our Service Execution Roadmap</h2>
+                <h3 class="display-6 mb-0 text-center px-xl-10 px-xxl-15">From Your Home To Istanbul</h3>
+                <div class="row gx-lg-8 gx-xl-12 process-wrapper text-start mt-10">
+                    <video poster="{% static 'assets/media/study/study_plan_thumbnail.png' %}" class="player" playsinline controls preload="none">
+                        <source src="{% static 'assets/media/study/study_plan.mp4' %}" type="video/mp4">
+                    </video>
+                </div>
+                <!--/.row -->
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+
+
+
+
+
+{% comment %} packages {% endcomment %}
+<section class="wrapper bg-soft-primary">
+    <div class="container py-15 py-md-17 mt-15">
+        <div class="row gx-md-5 gy-5 mt-n19 justify-content-center">
+            <h2 class="fs-20 text-center">Which university do you want to study at?</h2>
+            {% for university in university_types %}
+                <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-2">
+                        <i class="{{university.class}}"></i>
+                        <h4>{{university.title}}</h4>
+                            <p class=" p-2">{{university.body}}</p>
+                        </div>
+                        <!--/.card-body -->
+                        <div class="card-footer text-center">
+                        <a href="{{university.blog.get_absolute_url}}" class="hover-2 text-{{university.color}}">Learn More</a>
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!--/.card -->
+                </div>
+                <!--/column -->
+            {% endfor %}
+
+        </div>
+        <!--/.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+
+{% comment %} featured blogs {% endcomment %}
+{% include 'components/featured_blogs.html' with title="Here are some articles to get you going" category='education' %}
+
+
+
+{% comment %} faqs {% endcomment %}
+<section class="wrapper bg-light">
+    <div class="container py-10 py-md-16">
+        <div class="card bg-soft-primary rounded-4">
+            <div class="card-body p-md-10 p-xl-11">
+                <div class="row gx-lg-8 gx-xl-12 gy-10">
+                    <div class="col-lg-6">
+                        <h3 class="display-4 mb-4">Frequently Asked Questions</h3>
+                        <p class="lead fs-lg mb-0">If you don't see an answer to your question, you can send us an email
+                            from our
+                            <a href="mainapp:contact" class="hover ">contact</a> form.
+                        </p>
+                    </div>
+                    <!--/column -->
+                    <div class="col-lg-6">
+                        <div class="accordion accordion-wrapper" id="accordionExample">
+                            {% for faq in faqs %}
+                                <div class="card plain accordion-item">
+                                    <div class="card-header" id="headingOne">
+                                        <button class="collapsed" data-bs-toggle="collapse"
+                                            data-bs-target="#accordion-collapse-3-{{faq.id}}" aria-expanded="true"
+                                            aria-controls="accordion-collapse-3-{{faq.id}}">{{faq.question}}</button>
+                                    </div>
+                                    <!--/.card-header -->
+                                    <div id="accordion-collapse-3-{{faq.id}}" class="accordion-collapse collapse"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p>{{faq.answer}}</p>
+                                        </div>
+                                        <!--/.card-body -->
+                                    </div>
+                                    <!--/.accordion-collapse -->
+                                </div>
+                                <!--/.accordion-item -->
+                            {% endfor %}
+                        </div>
+                        <!--/.accordion -->
+                    </div>
+                    <!--/column -->
+                </div>
+                <!--/.row -->
+            </div>
+            <!--/.card-body -->
+        </div>
+        <!--/.card -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+
+{% endblock content %}
